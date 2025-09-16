@@ -1,7 +1,14 @@
-npx create-expo-app RNMaps --template blank
+1 npx create-expo-app RNMaps --template blank
 
-npx expo install react-dom react-native-web // to open with w
-npx expo install expo-maps
+2 cd RNMaps
+3 npx expo install react-native-maps
+4 npm start
 
 npx expo install expo-dev-client
 npx expo run:android
+npx expo start --dev-client
+a
+
+& "C:\Users\irens\AppData\Local\Android\Sdk\platform-tools\adb.exe" devices
+& "C:\Users\irens\AppData\Local\Android\Sdk\platform-tools\adb.exe" kill-server
+& "C:\Users\irens\AppData\Local\Android\Sdk\platform-tools\adb.exe" start-server
