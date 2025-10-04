@@ -20,12 +20,22 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "config": {
+        "googleMaps": {
+          "apiKey": "YOUR_REAL_API_KEY_HERE"
+        }
+      },
       "edgeToEdgeEnabled": true,
-      "package": "com.anonymous.RNMaps"
+      "package": "com.treduapp.RNMaps"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-notifications"]
+    "plugins": ["expo-notifications"],
+    "extra": {
+      "eas": {
+        "projectId": "0fd305fc-7308-4653-a014-318aa00ead49"
+      }
+    }
   }
 }
