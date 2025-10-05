@@ -20,4 +20,4 @@ eas --version
 eas login
 eas build:configure
 
-https://expo.dev/accounts
+npm cache clean --force
