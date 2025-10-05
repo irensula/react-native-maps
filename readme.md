@@ -19,3 +19,5 @@ npm install -g eas-cli
 eas --version
 eas login
 eas build:configure
+
+https://expo.dev/accounts

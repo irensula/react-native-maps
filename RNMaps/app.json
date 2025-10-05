@@ -31,11 +31,14 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-notifications"],
+    "plugins": [
+      "expo-notifications"
+    ],
     "extra": {
       "eas": {
         "projectId": "0fd305fc-7308-4653-a014-318aa00ead49"
       }
-    }
+    },
+    "owner": "irensula"
   }
 }
