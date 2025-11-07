@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "RNMaps",
-    "slug": "RNMaps",
+    "name": "training-app",
+    "slug": "training-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,25 +20,10 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "config": {
-        "googleMaps": {
-          "apiKey": "YOUR_REAL_API_KEY_HERE"
-        }
-      },
-      "edgeToEdgeEnabled": true,
-      "package": "com.treduapp.RNMaps"
+      "edgeToEdgeEnabled": true
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "plugins": [
-      "expo-notifications"
-    ],
-    "extra": {
-      "eas": {
-        "projectId": "0fd305fc-7308-4653-a014-318aa00ead49"
-      }
-    },
-    "owner": "irensula"
+    }
   }
 }

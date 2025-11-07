@@ -1,4 +1,4 @@
-1 npx create-expo-app RNMaps --template blank
+1 npx create-expo-app training-app --template blank
 
 2 cd RNMaps
 3 npx expo install react-native-maps
