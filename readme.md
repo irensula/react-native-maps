@@ -21,3 +21,5 @@ eas login
 eas build:configure
 
 https://expo.dev/accounts
+
+npx expo install react-dom react-native-web - for the web
