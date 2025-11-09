@@ -3,17 +3,30 @@ import { useState } from "react";
 import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
 
 export default function App() {
-  const [task, setTask] = useState("");
+  const [tasks, setTasks] = useState([]);
+  const [text, setText] = "";
+
   const addTask = () => {
+    const newTask = {
+      id: Date.now().toString(),
+      text: text.trim(),
+      done: false,
+    };
+    setTasks([newTask, ...tasks]);
+    setText("");
     console.log("Add task");
   };
   return (
     <View style={styles.container}>
       <Text>Let's do it!</Text>
       <View>
-        <TextInput />
+        <TextInput
+          value={text}
+          onChangeText={setText}
+          onSubmitEditing={addTask}
+        />
         <Pressable onPress={() => addTask}>
-          <Text>Add task</Text>
+          <Text onPress={setTasks}>Add task</Text>
         </Pressable>
       </View>
 
