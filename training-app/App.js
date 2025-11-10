@@ -1,12 +1,23 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Pressable,
+  FlatList,
+} from "react-native";
 
 export default function App() {
   const [tasks, setTasks] = useState([]);
-  const [text, setText] = "";
+  const [text, setText] = useState("");
+
+  const canAdd = text.trim().length > 0;
 
   const addTask = () => {
+    if (!canAdd) return;
+
     const newTask = {
       id: Date.now().toString(),
       text: text.trim(),
@@ -32,11 +43,10 @@ export default function App() {
 
       <View>
         <View>
+          <FlatList data={tasks} style={styles.list} />
           <Pressable>
             <Text>Done</Text>
           </Pressable>
-
-          <Text>Task</Text>
 
           <Pressable>
             <Text>Delete</Text>
@@ -54,5 +64,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "red",
+  },
+  list: {
+    width: 100,
+    backgroundColor: "green",
+    height: 100,
   },
 });
