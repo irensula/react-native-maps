@@ -24,3 +24,5 @@ https://expo.dev/accounts
 
 npx expo install react-dom react-native-web - for the web
 npm cache clean --force
+
+expo install expo-av
