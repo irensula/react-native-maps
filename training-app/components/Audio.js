@@ -1,13 +1,13 @@
 import { Audio } from "expo-av";
 import { useEffect, useState } from "react";
-import { Button } from "react-native";
+import { Image, Pressable } from "react-native";
 
-export default function Audio() {
+export default function Audio({ audioSource, imageSource }) {
   const [sound, setSound] = useState();
 
   async function playSound() {
     const { sound } = await Audio.Sound.createAsync(
-      require("../assets/Misto.mp3")
+      require(`../assets/${audioSource}`)
     );
     setSound(sound);
     await sound.playAsync();
@@ -20,5 +20,9 @@ export default function Audio() {
         }
       : undefined;
   }, [sound]);
-  return <Button title="Play Sound" onPress={playSound} />;
+  return (
+    <Pressable>
+      <Image source={imageSource} title="Play Sound" onPress={playSound} />
+    </Pressable>
+  );
 }
