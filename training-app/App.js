@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { StyleSheet, View, Pressable } from "react-native";
 import Audio from "./components/Audio";
+import audioSources from "./components/sounds";
 
 export default function App() {
   const [audioSource, setAudioSource] = useState(null);
@@ -11,7 +12,12 @@ export default function App() {
       {/* window 1 */}
       <View style={styles.window}>
         <Pressable>
-          <Audio audioSource={audioSource} imageSource={imageSource} />
+          {audioSources.map((index, key) => (
+            <Audio
+              audioSource={audioSource[index]}
+              imageSource={imageSource[index]}
+            />
+          ))}
         </Pressable>
       </View>
       {/* window 2 */}
