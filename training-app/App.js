@@ -1,53 +1,16 @@
-import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
 import { StyleSheet, View, Pressable } from "react-native";
-import Audio from "./components/Audio";
+import Sound from "./components/Sound";
 import audioSources from "./components/sounds";
 
 export default function App() {
-  const [audioSource, setAudioSource] = useState(null);
-
   return (
     <View style={styles.container}>
-      {/* window 1 */}
       <View style={styles.window}>
         <Pressable>
-          {audioSources.map((index, key) => (
-            <Audio
-              audioSource={audioSource[index]}
-              imageSource={imageSource[index]}
-            />
-          ))}
-        </Pressable>
-      </View>
-      {/* window 2 */}
-      <View style={styles.window}>
-        <Pressable>
-          <Audio audioSource={audioSource} imageSource={imageSource} />
-        </Pressable>
-      </View>
-      {/* window 3 */}
-      <View style={styles.window}>
-        <Pressable>
-          <Audio audioSource={audioSource} imageSource={imageSource} />
-        </Pressable>
-      </View>
-      {/* window 4 */}
-      <View style={styles.window}>
-        <Pressable>
-          <Audio audioSource={audioSource} imageSource={imageSource} />
-        </Pressable>
-      </View>
-      {/* window 5 */}
-      <View style={styles.window}>
-        <Pressable>
-          <Audio audioSource={audioSource} imageSource={imageSource} />
-        </Pressable>
-      </View>
-      {/* window 6 */}
-      <View style={styles.window}>
-        <Pressable>
-          <Audio audioSource={audioSource} imageSource={imageSource} />
+          {audioSources.map((obj, index) => {
+            const soundFile = Object.values(obj)[0];
+            return <Sound key={index} audioSource={soundFile} />;
+          })}
         </Pressable>
       </View>
     </View>
