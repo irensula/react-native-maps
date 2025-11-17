@@ -7,7 +7,9 @@
 DEPLOY:
 5 npx expo-doctor
 6 npx expo install expo-asset
-7 npm install -g expo-cli
+7 npm install -g eas-cli
+8 eas build:configure
+9 eas build --platform android --profile production
 
 npx expo install expo-dev-client
 npx expo run:android

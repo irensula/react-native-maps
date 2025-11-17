@@ -20,7 +20,12 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "package": "com.irensula.sevenapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -28,6 +33,11 @@
     "plugins": [
       "expo-audio",
       "expo-asset"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "72eddcff-94e0-40db-abad-9e9033913165"
+      }
+    }
   }
 }
