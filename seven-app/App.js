@@ -56,11 +56,13 @@ export default function App() {
         style={[styles.cloud2, { transform: [{ translateX: cloudAnim2 }] }]}
       />
 
-      <View>
+      <View style={styles.house}>
         {images.map((img, index) => (
           <SoundImage key={index} img={img} sound={sounds[index]} />
         ))}
       </View>
+
+      <View style={styles.grass}></View>
     </View>
   );
 }
@@ -68,7 +70,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "lightblue",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -91,5 +93,18 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 120,
     left: 0,
+  },
+  house: {
+    backgroundColor: "grey",
+    width: "70%",
+    height: 400,
+    borderColor: "#000",
+    borderWidth: 3,
+    flexDirection: "row",
+  },
+  grass: {
+    backgroundColor: "green",
+    borderTopColor: "#000",
+    borderTopWidth: 3,
   },
 });
