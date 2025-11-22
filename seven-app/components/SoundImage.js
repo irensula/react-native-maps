@@ -45,7 +45,13 @@ const SoundImage = ({ img, sound }) => {
       <Animated.Image
         source={img}
         style={[
-          { width: 100, height: 100, margin: 10 },
+          {
+            width: 100,
+            height: 100,
+            margin: 10,
+            borderWidth: 2,
+            borderColor: "#000",
+          },
           { transform: [{ rotate: rotateInterpolate }] },
         ]}
       />

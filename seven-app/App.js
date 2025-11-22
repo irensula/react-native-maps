@@ -44,7 +44,6 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Hi there!</Text>
       <StatusBar style="auto" />
 
       <Animated.Image
@@ -73,6 +72,7 @@ const styles = StyleSheet.create({
     backgroundColor: "lightblue",
     alignItems: "center",
     justifyContent: "center",
+    justifyContent: "flex-end",
   },
   cloud1: {
     width: CLOUD_WIDTH1,
@@ -95,16 +95,21 @@ const styles = StyleSheet.create({
     left: 0,
   },
   house: {
-    backgroundColor: "grey",
+    backgroundColor: "#e1be9b",
     width: "70%",
-    height: 400,
+    height: 500,
     borderColor: "#000",
     borderWidth: 3,
     flexDirection: "row",
+    flexWrap: "wrap",
+    borderBottomWidth: 0,
+    paddingTop: 30,
   },
   grass: {
     backgroundColor: "green",
     borderTopColor: "#000",
     borderTopWidth: 3,
+    height: 100,
+    width: "100%",
   },
 });
