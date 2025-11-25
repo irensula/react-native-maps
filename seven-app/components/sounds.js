@@ -1,6 +1,7 @@
 export default [
-  require("../assets/sound1.mp3"),
-  require("../assets/sound2.mp3"),
-  require("../assets/sound3.mp3"),
-  require("../assets/sound4.mp3"),
+  require("../assets/Dadi.mp3"),
+  require("../assets/Babi.mp3"),
+  require("../assets/Mama.mp3"),
+  require("../assets/Homiachok.mp3"),
+  require("../assets/Dani.mp3"),
 ];
