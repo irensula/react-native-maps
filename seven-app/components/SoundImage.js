@@ -23,6 +23,31 @@ const SoundImage = ({ img, sound }) => {
         useNativeDriver: true,
       }),
       Animated.timing(rotateAnim, {
+        toValue: -1,
+        duration: 50,
+        useNativeDriver: true,
+      }),
+      Animated.timing(rotateAnim, {
+        toValue: 1,
+        duration: 50,
+        useNativeDriver: true,
+      }),
+      Animated.timing(rotateAnim, {
+        toValue: -1,
+        duration: 50,
+        useNativeDriver: true,
+      }),
+      Animated.timing(rotateAnim, {
+        toValue: 1,
+        duration: 50,
+        useNativeDriver: true,
+      }),
+      Animated.timing(rotateAnim, {
+        toValue: -1,
+        duration: 50,
+        useNativeDriver: true,
+      }),
+      Animated.timing(rotateAnim, {
         toValue: 0,
         duration: 50,
         useNativeDriver: true,
@@ -38,6 +63,7 @@ const SoundImage = ({ img, sound }) => {
   return (
     <Pressable
       onPress={() => {
+        player.seekTo(0);
         player.play();
         rotate();
       }}
@@ -51,6 +77,7 @@ const SoundImage = ({ img, sound }) => {
             margin: 10,
             borderWidth: 2,
             borderColor: "#000",
+            borderRadius: 15,
           },
           { transform: [{ rotate: rotateInterpolate }] },
         ]}

@@ -104,6 +104,8 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     borderBottomWidth: 0,
     paddingTop: 30,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
   },
   grass: {
     backgroundColor: "green",
