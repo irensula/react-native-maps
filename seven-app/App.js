@@ -45,6 +45,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
+      <View>
+        <Image source={require("./assets/sun.png")} />
+      </View>
 
       <Animated.Image
         source={require("./assets/cloud1.png")}
@@ -54,11 +57,21 @@ export default function App() {
         source={require("./assets/cloud2.png")}
         style={[styles.cloud2, { transform: [{ translateX: cloudAnim2 }] }]}
       />
-
-      <View style={styles.house}>
-        {images.map((img, index) => (
-          <SoundImage key={index} img={img} sound={sounds[index]} />
-        ))}
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-around",
+          alignItems: "baseline",
+        }}
+      >
+        <View>
+          <Image source={require("./assets/tree.png")} />
+        </View>
+        <View style={styles.house}>
+          {images.map((img, index) => (
+            <SoundImage key={index} img={img} sound={sounds[index]} />
+          ))}
+        </View>
       </View>
 
       <View style={styles.grass}></View>
