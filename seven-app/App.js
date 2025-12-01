@@ -2,17 +2,17 @@ import { useRef, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
-  Text,
   View,
   Animated,
   Dimensions,
   Easing,
+  Image,
 } from "react-native";
 import images from "./components/images";
 import SoundImage from "./components/SoundImage";
 import sounds from "./components/sounds";
 
-const { width } = Dimensions.get("window");
+const { width, height } = Dimensions.get("window");
 const CLOUD_WIDTH1 = 130;
 const CLOUD_WIDTH2 = 100;
 
@@ -45,8 +45,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <View>
-        <Image source={require("./assets/sun.png")} />
+      <View style={styles.sunWrapper}>
+        <Image style={styles.sun} source={require("./assets/sun.png")} />
       </View>
 
       <Animated.Image
@@ -57,20 +57,19 @@ export default function App() {
         source={require("./assets/cloud2.png")}
         style={[styles.cloud2, { transform: [{ translateX: cloudAnim2 }] }]}
       />
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-around",
-          alignItems: "baseline",
-        }}
-      >
-        <View>
-          <Image source={require("./assets/tree.png")} />
-        </View>
+      <View style={styles.treeAndHouse}>
         <View style={styles.house}>
-          {images.map((img, index) => (
-            <SoundImage key={index} img={img} sound={sounds[index]} />
-          ))}
+          <View style={styles.windows}>
+            {images.map((img, index) => (
+              <SoundImage key={index} img={img} sound={sounds[index]} />
+            ))}
+          </View>
+          <View style={styles.doorWrapper}>
+            <Image style={styles.door} source={require("./assets/door.png")} />
+          </View>
+        </View>
+        <View style={styles.treeWrapper}>
+          <Image style={styles.tree} source={require("./assets/tree.png")} />
         </View>
       </View>
 
@@ -84,8 +83,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "lightblue",
     alignItems: "center",
-    justifyContent: "center",
-    justifyContent: "flex-end",
+    justifyContent: "flex-start",
   },
   cloud1: {
     width: CLOUD_WIDTH1,
@@ -107,18 +105,63 @@ const styles = StyleSheet.create({
     top: 120,
     left: 0,
   },
+  sunWrapper: {
+    width: 100,
+    height: 100,
+    marginVertical: 30,
+    marginRight: 150,
+  },
+  sun: {
+    width: "100%",
+    height: "100%",
+    resizeMode: "contain",
+  },
+  treeAndHouse: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "flex-end",
+    position: "relative",
+  },
+  treeWrapper: {
+    position: "absolute",
+    left: width * 0.52,
+    bottom: -height * 0.05,
+    width: width * 0.25,
+    height: width * 0.25 * 2,
+    zIndex: 1,
+  },
+  tree: {
+    width: "100%",
+    height: "100%",
+    resizeMode: "contain",
+  },
   house: {
     backgroundColor: "#e1be9b",
     width: "70%",
     height: 500,
     borderColor: "#000",
     borderWidth: 3,
-    flexDirection: "row",
-    flexWrap: "wrap",
+    justifyContent: "space-between",
     borderBottomWidth: 0,
     paddingTop: 30,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
+    zIndex: 1,
+    alignItems: "center",
+  },
+  windows: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
+  doorWrapper: {
+    width: 75,
+    height: 100,
+    justifyContent: "center",
+  },
+  door: {
+    width: "100%",
+    height: "100%",
+    resizeMode: "contain",
   },
   grass: {
     backgroundColor: "green",
