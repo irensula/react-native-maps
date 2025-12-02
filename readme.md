@@ -3,6 +3,7 @@
 2 cd <folder-name>
 3 npx expo start
 4 npx expo install expo-audio
+5 npm install expo-build-properties
 
 DEPLOY:
 5 npx expo-doctor
