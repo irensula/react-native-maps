@@ -22,21 +22,13 @@
       },
       "edgeToEdgeEnabled": true,
       "permissions": [],
+      "blockedPermissions": ["android.permission.RECORD_AUDIO"],
       "package": "com.irensula.sevenapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      [
-        "expo-build-properties",
-        {
-          "android": {
-            "permissions": []
-          }
-        }
-      ]
-    ],
+    "plugins": ["expo-audio", "expo-asset"],
     "extra": {
       "eas": {
         "projectId": "72eddcff-94e0-40db-abad-9e9033913165"
