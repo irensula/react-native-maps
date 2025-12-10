@@ -35,9 +35,18 @@ export default function App() {
     setTasks(newList);
   };
 
+  const toggleTask = (id) => {
+    setTasks((prev) =>
+      prev.map((t) => (t.id === id ? { ...t, done: !t.done } : t))
+    );
+  };
+
   const renderItem = ({ item }) => {
     return (
-      <Pressable onLongPress={() => removeTask(item.id)}>
+      <Pressable
+        onPress={() => toggleTask(item.id)}
+        onLongPress={() => removeTask(item.id)}
+      >
         <Text>{item.text}</Text>
       </Pressable>
     );
