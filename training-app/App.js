@@ -53,32 +53,33 @@ export default function App() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <StatusBar style="auto" />
       <Text>Let's do it!</Text>
       <View>
         <TextInput
+          placeholder="What to do?"
           value={text}
           onChangeText={setText}
           onSubmitEditing={addTask}
           style={styles.inputWrapper}
+          returnKeyType="done"
         />
-        <Pressable onPress={addTask}>
+        <Pressable onPress={addTask} disabled={!canAdd}>
           <Text>Add task</Text>
         </Pressable>
       </View>
 
       <View>
-        <View>
-          <FlatList
-            data={tasks}
-            style={styles.list}
-            keyExtractor={(item) => item.id}
-            renderItem={renderItem}
-          />
-        </View>
+        <FlatList
+          data={tasks}
+          keyExtractor={(item) => item.id}
+          renderItem={renderItem}
+          style={styles.list}
+          ListEmptyComponent={<Text>Not tasks yet</Text>}
+        />
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
